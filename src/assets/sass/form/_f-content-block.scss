@@ -1,0 +1,39 @@
+.f-content-block {
+}
+
+.f-content-block__head {
+  @media #{$screenSize_XS} {
+    margin: {
+      bottom: 18px;
+    }
+  }
+
+  @media #{$screenSize_S} {
+    margin: {
+      bottom: 32px;
+    }
+  }
+}
+
+.f-content-block__item {
+  & + .f-content-block__item {
+    margin-top: 40px;
+  }
+}
+
+.f-content-block__item--column_2 {
+  @media #{$screenSize_S} {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  & > * {
+    @media #{$screenSize_XS} {
+      margin-top: 22px;
+    }
+
+    @media #{$screenSize_S} {
+      width: calc(50% - 20px);
+    }
+  }
+}

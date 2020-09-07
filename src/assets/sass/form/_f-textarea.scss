@@ -1,0 +1,52 @@
+.f-textarea {
+  font-family: $headFont;
+  background: $formBgDefaultColor;
+
+  border: {
+    width: $formBorderWidth;
+    style: solid;
+    color: $formBorderDefaultColor;
+    radius: $inputElementRadius;
+  }
+
+  padding: {
+    top: 9px;
+    right: 14px;
+    bottom: 9px;
+    left: 14px;
+  }
+
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.3s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  width: 100%;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  @include fontSize(16);
+
+  @media #{$screenSize_XS} {
+    height: 180px;
+  }
+
+  @media #{$screenSize_S} {
+    height: 200px;
+    width: 100%;
+    // max-width: 680px;
+  }
+
+  .browser-is-ie & {
+    overflow: auto;
+  }
+
+  &:hover {
+    @media #{$screenSize_XS} {
+      cursor: default;
+    }
+
+    @media #{$screenSize_S} {
+      background: {
+        color: $white;
+      }
+    }
+  }
+}

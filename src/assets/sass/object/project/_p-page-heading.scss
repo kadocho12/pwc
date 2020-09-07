@@ -1,0 +1,25 @@
+.p-page-heading {
+  @include engFont;
+  font-weight: $medium;
+  color: $white;
+  position: relative;
+  text-align: center;
+  @media #{$screenSize_XS} {
+    @include fontSize(32);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(40);
+  }
+}
+
+.p-page-heading__sub {
+  @include headFont;
+  font-weight: $semibold;
+  display: block;
+  @media #{$screenSize_XS} {
+    @include fontSize(16);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(20);
+  }
+}

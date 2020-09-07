@@ -1,0 +1,34 @@
+.p-service-block {
+  @include setNextSpace;
+  @media #{$screenSize_XS} {
+    margin-top: 18px;
+  }
+  @media #{$screenSize_S} {
+    margin-top: 26px;
+  }
+  @media #{$screenSize_S} {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}
+
+.p-service-block__text {
+  @media #{$screenSize_XS} {
+    line-height: 1.85;
+    @include fontSize(15);
+    margin-top: 18px;
+  }
+  @media #{$screenSize_S} {
+    order: 1;
+    width: 60%;
+  }
+}
+
+.p-service-block__img {
+  @media #{$screenSize_S} {
+    order: 2;
+    width: 40%;
+    margin-left: 60px;
+  }
+}

@@ -1,0 +1,18 @@
+/* Body直下のwrapper
+----------------------------------------------------------------- */
+.l-root-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+
+  .browser-is-ie & {
+    display: block;
+  }
+
+  @media #{$screenSize_M} {
+    padding-top: 80px;
+  }
+}

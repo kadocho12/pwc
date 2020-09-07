@@ -1,0 +1,35 @@
+.p-contact {
+  color: $white;
+  flex-wrap: nowrap;
+  @media #{$screenSize_XS} {
+    display: block;
+  }
+}
+
+.p-contact__info {
+  @media #{$screenSize_XS} {
+    width: 100%;
+    margin-top: 8px;
+  }
+  @media #{$screenSize_S} {
+    display: flex;
+    margin-left: auto;
+    flex-wrap: wrap;
+    margin-left: 40px;
+  }
+}
+
+.p-contact__tel {
+  @media #{$screenSize_XS} {
+    text-align: center;
+  }
+  @media #{$screenSize_S} {
+    margin-right: 40px;
+  }
+}
+
+.p-contact__button {
+  @media #{$screenSize_XS} {
+    margin: 8px auto 0;
+  }
+}

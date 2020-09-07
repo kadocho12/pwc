@@ -1,0 +1,73 @@
+.p-breadcrumbs {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $zIndexLv1;
+  @media #{$screenSize_XS} {
+    display: none;
+  }
+}
+
+.p-breadcrumbs__inner {
+  display: flex;
+  width: 90%;
+  overflow: hidden;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  padding-top: 15px;
+}
+
+.p-breadcrumbs__item {
+  position: relative;
+  padding-left: 12px;
+  @include fontSize(13);
+  white-space: nowrap;
+  color: $textColor;
+
+  &:first-child {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+
+  &:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &:before {
+    display: inline;
+    margin-right: 12px;
+    content: '/';
+  }
+
+  & > a {
+    color: $textColor;
+    text-decoration: underline;
+  }
+
+  & > span {
+    margin: {
+      right: 15px;
+      left: 10px;
+    }
+  }
+}
+
+/* モディファイア
+----------------------------------------------------*/
+
+.p-breadcrumbs.-onVisual {
+  .p-breadcrumbs__item {
+    color: $white;
+    & > a {
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.f-continue-block {
+  border-top: 1px solid $borderColor;
+
+  @media #{$screenSize_XS} {
+    margin: {
+      top: 35px;
+    }
+    padding-top: 20px;
+  }
+
+  @media #{$screenSize_S} {
+    margin: {
+      top: 80px;
+    }
+    padding: 80px 40px 0 40px;
+  }
+}
+
+.f-continue-block__button {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+
+  &:not(:first-child) {
+    margin: {
+      top: 40px;
+    }
+  }
+}

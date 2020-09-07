@@ -1,0 +1,71 @@
+extends /_layout/_index
+
+block vars
+  -
+    const page = pages.contact
+
+block content
+  +breadcrumb([
+    { title: page.title, path: page.path },
+  ])
+
+  .l-spacer.-large
+    .l-container.-small
+      h1.c-heading.-lv_1 お問い合わせ
+      p.c-paragraph
+        span.f-required （必須）
+        | が付いている項目は必須です。
+      .l-spacer.-h3
+        form(action='', method='', name='')
+          .f-input-block.f-content-block__item
+            .f-input-block__head
+              label.f-input-block__heading
+                | お問い合わせの種類
+                span.f-required （必須）
+            .f-input-block__body
+              .f-select
+                select(name='')
+                  option.f-option(value='お仕事のご依頼やご相談')
+                    | お仕事のご依頼やご相談
+                  option.f-option(value='協業やパートナーに関するお問い合わせ')
+                    | 協業やパートナーに関するお問い合わせ
+                  option.f-option(value='その他のお問い合わせ')
+                    | その他のお問い合わせ
+
+          .f-input-block.f-content-block__item
+            .f-input-block__head
+              label(for="name").f-input-block__heading
+                | 氏名（漢字）
+                span.f-required （必須）
+            .f-input-block__body
+              input.f-input-text(type='text', name='name', id='name', value='')
+
+          .f-input-block.f-content-block__item
+            .f-input-block__head
+              label(for="name-hurigana").f-input-block__heading
+                | 氏名（ふりがな）
+                span.f-required （必須）
+            .f-input-block__body
+              input.f-input-text(type='text', name='name-hurigana', id='name-hurigana', value='')
+
+          .f-input-block.f-content-block__item
+            .f-input-block__head
+              label(for="email").f-input-block__heading
+                | メールアドレス
+                span.f-required （必須）
+            .f-input-block__body
+              input.f-input-text(type='email', name='email',id="email", value='')
+
+          .f-input-block.f-content-block__item
+            .f-input-block__head
+              label(for="matter").f-input-block__heading
+                | お問い合わせ内容
+                span.f-required （必須）
+            .f-input-block__body
+              textarea.f-textarea(name='matter', id='matter')
+
+          .f-continue-block
+            .f-continue-block__button
+              button(type='submit').c-button.-center
+                span 確認画面へ進むことはできない
+

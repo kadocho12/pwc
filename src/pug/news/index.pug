@@ -1,0 +1,36 @@
+extends /_layout/_index
+
+block vars
+  -
+    const page = pages.news
+
+block content
+  +breadcrumb([
+    { title: page.title, path: page.path },
+  ], "-onVisual")
+
+  section.l-spacer.-medium.-pageTop.-news
+    .l-container.-small
+      h1.p-page-heading News
+        span.p-page-heading__sub お知らせ
+  .l-spacer.-large
+    .l-container.-small
+      section.l-spacer.-h2
+        h2.c-heading.-lv_2 お知らせ一覧
+        .p-news
+          .p-news__list
+            each newsItems in pages.news.child
+              article.p-news__item
+                a.p-news__link(href=newsItems.path)
+                  .p-news__info
+                    time.p-news__date(datetime=newsItems.datetime) #{newsItems.date}
+                      case newsItems.category
+                        when "news"
+                          span.p-news__category.-news お知らせ
+                        when "blog"
+                          span.p-news__category.-blog ブログ
+                        default
+                          span.p-news__category
+                  p.p-news__text #{newsItems.title}
+  //- お問い合わせ
+  include /_components/_contact-block

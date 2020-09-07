@@ -1,0 +1,34 @@
+extends /_layout/_index
+
+block vars
+  -
+    const page = pages.works
+
+block content
+  +breadcrumb([
+    { title: page.title, path: page.path },
+  ], "-onVisual")
+
+  section.l-spacer.-medium.-pageTop.-works
+    .l-container.-small
+      h1.p-page-heading Works
+        span.p-page-heading__sub 実績
+  .l-spacer.-large
+    .l-container.-small
+      section.l-spacer.-h2
+        h2.c-heading.-lv_2 今までに制作してきたWebサイトです
+        .c-grid.-gutter
+
+          each worksItems in pages.works.child
+          
+            article.c-grid__item.-sp12Of12.-tab4Of12
+              a.c-card(href=worksItems.path)
+                .c-card__header
+                  h3.c-card__title #{worksItems.title}
+                  .c-card__thumbnail
+                    img(src=worksItems.img, srcset=worksItems.img+" 1x,"+worksItems.img2+" 2x", alt=worksItems.alt)
+                .c-card__body
+                  p.c-card__text #{worksItems.text}
+
+  //- お問い合わせ
+  include /_components/_contact-block

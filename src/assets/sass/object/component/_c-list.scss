@@ -1,0 +1,79 @@
+/* リスト
+----------------------------------------------------------------- */
+.c-list {
+  line-height: 1.75;
+  
+  @media #{$screenSize_XS} {
+    @include fontSize(16);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(18);
+  }
+
+  & li {
+    position: relative;
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+}
+
+/* リンクリスト */
+.c-list.-link {
+  & > li {
+    border-bottom: 1px solid $borderColor;
+
+    & > a {
+      display: block;
+      position: relative;
+      padding: {
+        top: 16px;
+        right: 24px;
+        bottom: 16px;
+      }
+      @include fontSize(14);
+      font-weight: bold;
+
+      @media #{$screenSize_M} {
+        padding-right: 32px;
+        @include fontSize(16);
+      }
+    }
+  }
+}
+
+/**
+ * 装飾付き（円）
+ */
+.c-list.-disc {
+  & > li {
+    position: relative;
+    padding-left: 14px;
+
+    + li {
+      margin-top: 3px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 1px;
+      width: 6px;
+      height: 6px;
+      box-sizing: border-box;
+      background-color: $mainColor;
+      border-radius: 50%;
+      top: 0.75em;
+    }
+  }
+}
+
+/**
+ * 装飾付き（数字）
+ */
+.c-list--decimal {
+  list-style-type: decimal;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}

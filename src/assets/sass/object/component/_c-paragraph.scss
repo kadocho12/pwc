@@ -1,0 +1,36 @@
+/* 文章
+----------------------------------------------------------------- */
+.c-paragraph {
+  line-height: 1.5;
+  @include lineHeightCrop(1.5);
+  @include setNextSpace;
+
+  @media #{$screenSize_XS} {
+    @include fontSize(14);
+    // margin-top: 21px;
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(16);
+    // margin-top: 24px;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  & > a {
+    transition: color 0.6s ease;
+    &:hover {
+      @media #{$screenSize_M} {
+        color: $linkColor;
+      }
+    }
+  }
+}
+
+/**
+* 中央寄せ
+*/
+.c-paragraph.-center {
+  text-align: center;
+}

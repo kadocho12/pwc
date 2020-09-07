@@ -1,0 +1,129 @@
+.p-home-section {
+  position: relative;
+}
+
+.p-home-section__content {
+  position: relative;
+  z-index: $zIndexLv0;
+  @media #{$screenSize_S} {
+    display: grid;
+    grid-template:
+    'homeHeading homeImg'auto
+    'homeParagraph homeImg' auto
+    'homeButton homeImg' 1fr
+    / 50% 46%;
+    grid-gap: 0 4%;
+  }
+
+  &.-reverse {
+    @media #{$screenSize_S} {
+      grid-template:
+      'homeImg homeHeading'auto
+      'homeImg homeParagraph' auto
+      'homeImg homeButton' 1fr
+      / 46% 50%;
+      grid-gap: 0 4%;
+    }
+  }
+}
+
+.p-home-section__heading {
+  font-weight: bold;
+  grid-area: homeHeading;
+  
+  @media #{$screenSize_XS} {
+    @include fontSize(32);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(40);
+  }
+
+  &.-center {
+    @media #{$screenSize_S} {
+      text-align: center;
+    }
+  }
+
+  &.-spCenter {
+    @media #{$screenSize_XS} {
+      text-align: center;
+    }
+  }
+}
+
+.p-home-section__head {
+  @include engFont;
+  font-weight: $medium;
+  opacity: 0;
+
+  &.is-active {
+    opacity: 1;
+
+    & span {
+      display: inline-block;
+      @include animation(
+        $name: animateFadeIn,
+        $duration: 0.6s,
+        $timing-function: ease,
+        $fill-mode: both
+      );
+
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.04s;
+        }
+      }
+    }
+
+    &.-aboutus {
+      & span {
+        &:nth-child(6) {
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+.p-home-section__heading-sub {
+  display: block;
+  @media #{$screenSize_XS} {
+    @include fontSize(14);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(16);
+  }
+}
+
+.p-home-section__paragraph {
+  grid-area: homeParagraph;
+  margin-top: 24px;
+  @media #{$screenSize_XS} {
+    @include fontSize(14);
+  }
+
+  &.-spCenter {
+    @media #{$screenSize_XS} {
+      text-align: center;
+    }
+  }
+}
+
+.p-home-section__image {
+  grid-area: homeImg;
+  display: flex;
+  align-items: center;
+  @media #{$screenSize_XS} {
+    margin-top: 24px;
+  }
+
+  & > img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+}
+
+.p-home-section__button {
+  grid-area: homeButton;
+  margin-top: 32px;
+}

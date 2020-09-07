@@ -1,0 +1,15 @@
+.c-image {
+  @include setNextSpace;
+  @media #{$screenSize_XS} {
+    @include fontSize(14);
+    // margin-top: 21px;
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(16);
+    // margin-top: 24px;
+  }
+
+  & > img {
+    width: 100%;
+  }
+}

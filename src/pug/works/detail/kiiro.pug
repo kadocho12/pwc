@@ -1,0 +1,22 @@
+extends /_layout/_index
+
+block vars
+  -
+    const page = pages.works.child.kiiro
+
+block content
+  +breadcrumb([
+    { title: pages.works.title, path: pages.works.path },
+    { title: page.title, path: page.path },
+  ])
+
+  section.l-spacer.-large
+    .l-container.-small
+      h1.c-heading.-lv_2 きいろ株式会社
+      p.c-paragraph #{page.text}
+      .c-image.p-edit-area__work-img
+        img(src=page.pageImg, alt=page.pageImgAlt)
+      
+
+  //- お問い合わせ
+  include /_components/_contact-block

@@ -1,0 +1,119 @@
+.p-hamburger {
+  @media #{$screenSize_underM} {
+    z-index: $zIndexMax;
+    position: fixed;
+    bottom: 40px;
+    right: 32px;
+    width: 56px;
+    height: 56px;
+    margin: auto;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 3px 6px 0px rgba(32,32,32,0.1);
+    transition: all .3s ease-in-out;
+    background-image: $gradation;
+  }
+  @media #{$screenSize_M} {
+    display: none;
+  }
+}
+
+.p-hamburger__line {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 24px;
+  height: 2px;
+  background: $white;
+  transition: inherit;
+}
+.p-hamburger__line:before,
+.p-hamburger__line:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: $white;
+  content: '';
+  transition: inherit;
+}
+.p-hamburger__line:before {
+  top: -6px;
+}
+.p-hamburger__line:after {
+  top: 6px;
+}
+
+
+.p-hamburger[aria-expanded="true"] .p-hamburger__line {
+  background-color: transparent;
+  transition: 0.3s ease;
+}
+
+.p-hamburger[aria-expanded="true"] .p-hamburger__line:before,
+.p-hamburger[aria-expanded="true"] .p-hamburger__line:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.p-hamburger[aria-expanded="true"] .p-hamburger__line:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.p-hamburger__title {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.p-hamburger__title-menu1,
+.p-hamburger__title-menu2 {
+  @include fontSize(10);
+  font-weight: bold;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  transition: 0.3s ease;
+  color: $white;
+}
+.p-hamburger__title-menu2 {
+  transform: translateY(5px);
+  opacity: 0;
+  visibility: hidden;
+
+  .p-hamburger.is-active > .p-hamburger__title > & {
+    transform: translateY(0);
+    transition: 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.p-hamburger__title-menu1 {  
+  transform: translateY(0);
+  transition: 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+
+  .p-hamburger.is-active > .p-hamburger__title > & {
+    transform: translateY(-5px);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.u-visuallyHidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%); 
+  margin: -1px;
+}

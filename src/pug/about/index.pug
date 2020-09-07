@@ -1,0 +1,28 @@
+extends /_layout/_index
+
+block vars
+  -
+    const page = pages.about
+
+block content
+  +breadcrumb([
+    { title: page.title, path: page.path },
+  ], "-onVisual")
+
+  section.l-spacer.-medium.-pageTop.-aboutUs
+    .l-container.-small
+      h1.p-page-heading About us
+        span.p-page-heading__sub 私たちについて
+  .l-spacer.-large
+    .l-container.-small
+      section.l-spacer.-h2
+        h2.c-heading.-lv_2 Web制作でお客様のビジネスに貢献します
+        p.c-image
+          img(src="/assets/img/about/img_about_01@2x.jpg", alt="窓際でノートパソコンを操作している人の画像")
+        p.c-paragraph Webサイトは、うまく活用できればビジネスに大きな効果をもたらします。そのためには、専門的な知識が必要です。私たちは、専門的な知識を持ったメンバーが揃っています。今まで培ったノウハウを用い、質の高いWebサイトを制作いたします。
+      section.l-spacer.-h2
+        h2.c-heading.-lv_2 わかりやすいデザインを心がけています
+        p.c-paragraph かっこいいWebサイトはたくさんありますが、重すぎて読み込みに時間がかかり離脱してしまったり、情報設計が十分でなかったりします。制作時は、ユーザー目線を忘れずに、わかりやすい、読みやすいWebサイトを目指します。
+
+  //- お問い合わせ
+  include /_components/_contact-block

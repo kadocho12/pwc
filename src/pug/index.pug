@@ -1,0 +1,117 @@
+extends /_layout/_index
+
+block vars
+  -
+    const page = pages.home
+
+block content
+
+  .p-home-visual.js-gallery
+    h1.p-home-visual__heading 
+      span どこにも存在しない
+      br.u-show-XS
+      span Web制作会社
+    .p-home-visual__inner
+      ul.p-home-visual__container
+        li.p-home-visual__image.js-gallery-main
+        li.p-home-visual__image.js-gallery-main
+        li.p-home-visual__image.js-gallery-main
+      ul.p-home-visual__list
+        li.p-home-visual__item
+          button.p-home-visual__thumb
+            span.p-home-visual__thumb-image.js-gallery-thumb(style="background-image:url(/assets/img/img_home_visual_1@2x.jpg")
+        li.p-home-visual__item
+          button.p-home-visual__thumb
+            span.p-home-visual__thumb-image.js-gallery-thumb(style="background-image:url(/assets/img/img_home_visual_1@2x.jpg")
+        li.p-home-visual__item
+          button.p-home-visual__thumb
+            span.p-home-visual__thumb-image.js-gallery-thumb(style="background-image:url(/assets/img/img_home_visual_1@2x.jpg")
+  
+  .l-spacer.-large
+    section.l-spacer.-medium.-pt0
+      .l-container
+        .p-home-section
+          .p-home-section__content
+            h2.p-home-section__heading
+              .p-home-section__head.-aboutus.js-text-animation About us
+              span.p-home-section__heading-sub 私たちについて
+            .p-home-section__image
+              img(src="/assets/img/img_about.jpg", alt="テーブルの上に置いたパソコンを操作する様子")
+            p.p-home-section__paragraph 私たちはWeb制作会社です。お客様のビジネスをより成功させるために、Webサイトを作らせていただきます。わかりやすいデザインで、伝えたいことをちゃんと伝えられるサイトを作ります。
+            .p-home-section__button
+              a(href=pages.about.path).c-button
+                span
+                  | 私たちについて見る
+
+    section.l-spacer.-medium
+      .l-container
+        .p-home-section
+          .p-home-section__content.-reverse
+            h2.p-home-section__heading
+              .p-home-section__head.js-text-animation Services
+              span.p-home-section__heading-sub サービス
+            .p-home-section__image
+              img(src="/assets/img/img_services.jpg", alt="2人でアイデアを出し合う様子")
+            p.p-home-section__paragraph Webサイトの戦略から策定いたします。どんな人をターゲットにするかはデザインの土台になります。制作フローを明確にして、クオリティを安定させています。Webサイトを公開してからの運用もいたします。
+            .p-home-section__button
+              a(href=pages.services.path).c-button
+                span
+                  | サービスについて見る
+
+    section.l-spacer.-medium
+      .l-container
+        .p-home-section
+          h2.p-home-section__heading.-center
+            .p-home-section__head.js-text-animation Works
+            span.p-home-section__heading-sub 実績
+          .l-spacer.-mtMedium
+            .c-grid.-gutter
+
+              each worksItems in pages.works.child
+                if worksItems.home === true
+                
+                  article.c-grid__item.-sp12Of12.-tab4Of12
+                    a.c-card(href=worksItems.path)
+                      .c-card__header
+                        h3.c-card__title #{worksItems.title}
+                        .c-card__thumbnail
+                          img(src=worksItems.img, srcset=worksItems.img+" 1x,"+worksItems.img2+" 2x", alt=worksItems.alt)
+                      .c-card__body
+                        p.c-card__text #{worksItems.text}
+            .p-home-section__button
+              a(href=pages.works.path).c-button.-center
+                span
+                  | 実績をもっと見る
+        
+    section.l-spacer.-medium.-pb0
+      .l-container
+        .p-home-section
+          h2.p-home-section__heading
+            .p-home-section__head.js-text-animation News
+            span.p-home-section__heading-sub お知らせ
+          .l-spacer.-mtMedium
+            .p-news
+              .p-news__list
+
+                each newsItems in pages.news.child
+                  if newsItems.home === true
+
+                    article.p-news__item
+                      a.p-news__link(href=newsItems.path)
+                        .p-news__info
+                          time.p-news__date(datetime=newsItems.datetime) #{newsItems.date}
+                            case newsItems.category
+                              when "news"
+                                span.p-news__category.-news お知らせ
+                              when "blog"
+                                span.p-news__category.-blog ブログ
+                              default
+                                span.p-news__category
+                        p.p-news__text #{newsItems.title}
+              .p-home-section__button
+                a(href=pages.news.path).c-button.-center
+                  span
+                    | お知らせをもっと見る
+
+  //- お問い合わせ
+  include /_components/_contact-block

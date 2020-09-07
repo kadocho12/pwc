@@ -1,0 +1,48 @@
+header.l-header.p-header#js-header
+  .l-container
+    .p-header__inner
+      .p-header__logo
+        a(href=pages.home.path).p-header__logo-link
+          //- img(src="/assets/img/img_logo.svg", alt="WEBWEBのロゴ")
+      nav.p-header__nav#js-main-menu-area
+        ul.p-header-menu
+          li.p-header-menu__item
+            a(href=pages.home.path).p-header-menu__link
+              span.p-header-menu__text
+                | ホーム
+          li.p-header-menu__item
+            a(href=pages.about.path).p-header-menu__link
+              span.p-header-menu__text
+                | 私たちについて
+          li.p-header-menu__item
+            a(href=pages.works.path).p-header-menu__link
+              span.p-header-menu__text
+                | 実績
+          li.p-header-menu__item
+            a(href=pages.services.path).p-header-menu__link
+              span.p-header-menu__text
+                | サービス
+          li.p-header-menu__item
+            a(href=pages.news.path).p-header-menu__link
+              span.p-header-menu__text
+                | お知らせ
+          li.p-header-menu__item
+            a(href=pages.contact.path).p-header-menu__link
+              span.p-header-menu__text
+                | お問い合わせ
+          //- each menu,index in mainMenu
+          //-   if(menu === page)
+          //-     li.p-main-menu__item.-current
+          //-       a(href=menu.path).p-main-menu__link
+          //-         | #{menu.title}
+          //-   else
+          //-     li.p-main-menu__item
+          //-       a(href=menu.path).p-main-menu__link
+          //-         | #{menu.title}
+                
+      button#js-main-menu-trigger.p-hamburger(aria-expanded="false",aria-controls="aria-header-nav")
+        span.p-hamburger__line
+          span.u-visuallyHidden メニューを開閉する
+        span.p-hamburger__title
+          span.p-hamburger__title-menu1 メニュー
+          span.p-hamburger__title-menu2 閉じる

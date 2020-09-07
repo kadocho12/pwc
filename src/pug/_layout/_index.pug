@@ -1,0 +1,25 @@
+include /_setting/_config
+include /_setting/_mixin
+
+block vars
+doctype html
+html(lang="ja")
+  head
+    include /_components/_head
+
+    block head
+
+  body.preload#top
+
+    //
+      全体のコンテナー
+    - const containerCls = (isBgWhite)? "-bg_white": "";
+    div(class=`l-root-container ${containerCls}`)
+      include /_components/_header
+
+      // 画面固有のコンテンツを格納するコンテナー
+      div(class=`l-main`)
+        block content
+
+      include /_components/_pagetop
+      include /_components/_footer

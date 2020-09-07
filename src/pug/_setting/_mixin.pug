@@ -1,0 +1,25 @@
+//--------------------------------------------------
+//- パンくずリスト
+//--------------------------------------------------
+//- const _breadcrumb = {
+//-   [
+//-     {path: ○○, title: ○○},
+//-   ],
+//-   '-modifire'
+//- }
+mixin breadcrumb(arr, modifier = "")
+  div(class=`p-breadcrumbs ${modifier}`)
+    ul.p-breadcrumbs__inner
+      li.p-breadcrumbs__item
+        a(href="/") ホーム
+      //- 引数の配列の数だけまわす。indexはただの数字
+      each item, index in arr
+        - var count = index + 1;
+        if count !== arr.length
+          //- 配列の最終番目以外
+          li.p-breadcrumbs__item
+            a(href=item.path) #{item.title}
+        else
+          //- 配列の最終番目の場合（リンクにしない）
+          li.p-breadcrumbs__item
+            | #{item.title}

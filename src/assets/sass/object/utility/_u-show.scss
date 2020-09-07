@@ -1,0 +1,41 @@
+.u-show-XS {
+  display: none;
+  @media #{$screenSize_XS} {
+    display: block;
+  }
+}
+
+.u-show-S {
+  display: none;
+  @media #{$screenSize_S} {
+    display: block;
+  }
+}
+
+.u-show-M {
+  display: none;
+  @media #{$screenSize_M} {
+    display: block;
+  }
+}
+
+.u-show-L {
+  display: none;
+  @media #{$screenSize_L} {
+    display: block;
+  }
+}
+
+.u-show-XL {
+  display: none;
+  @media #{$screenSize_XL} {
+    display: block;
+  }
+}
+
+.u-show-full {
+  display: none;
+  @media #{$screenSize_FULL} {
+    display: block;
+  }
+}
