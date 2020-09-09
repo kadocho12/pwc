@@ -54,6 +54,7 @@
   @include engFont;
   opacity: 0;
   font-weight: $medium;
+  display: block;
 
   &.is-active {
     opacity: 1;
