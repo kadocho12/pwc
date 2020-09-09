@@ -6,6 +6,16 @@
   position: relative;
   z-index: $zIndexLv0;
 
+  @media #{$screenSize_S} {
+    display: grid;
+    grid-template:
+      "homeHeading homeImg" auto
+      "homeParagraph homeImg" auto
+      "homeButton homeImg" 1fr
+      / 50% 46%;
+    grid-gap: 0 4%;
+  }
+
   &.-reverse {
     @media #{$screenSize_S} {
       grid-template:
@@ -15,15 +25,6 @@
         / 46% 50%;
       grid-gap: 0 4%;
     }
-  }
-  @media #{$screenSize_S} {
-    display: grid;
-    grid-template:
-      "homeHeading homeImg" auto
-      "homeParagraph homeImg" auto
-      "homeButton homeImg" 1fr
-      / 50% 46%;
-    grid-gap: 0 4%;
   }
 }
 
