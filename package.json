@@ -33,7 +33,7 @@
   },
   "private": true,
   "keywords": [],
-  "author": "Shibata Hironori",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.8.7",
