@@ -34,7 +34,7 @@
           opacity: 0;
 
           .browser-is-ie & {
-            transform: translate(5px, -75%) rotate(45deg);
+            transform: translate(5px, -40%) rotate(45deg);
           }
         }
         &:before {
@@ -43,7 +43,7 @@
           opacity: 1;
 
           .browser-is-ie & {
-            transform: translate(0, -75%) rotate(45deg);
+            transform: translate(0, -40%) rotate(45deg);
           }
         }
       }
@@ -58,13 +58,14 @@
     position: relative;
     padding-right: 15px;
     color: $baseColor;
+    line-height: $lhButton;
 
     &:after {
       @include arrow(8, 2, right, $white);
       right: 0;
       transition: all .6s ease;
       .browser-is-ie & {
-        transform: translate(0, -75%) rotate(45deg);
+        transform: translate(0, -40%) rotate(45deg);
       }
     }
     &:before {
@@ -74,7 +75,7 @@
       transition: all .6s ease;
       opacity: 0;
       .browser-is-ie & {
-        transform: translate(-5px, -75%) rotate(45deg);
+        transform: translate(-5px, -40%) rotate(45deg);
       }
     }
     @media #{$screenSize_M} {
@@ -101,13 +102,6 @@
       right: 12px;
       bottom: 13px;
       left: 12px;
-    }
-
-    .browser-is-ie & {
-      padding: {
-        top: 15px;
-        bottom: 11px;
-      }
     }
   }
 }
@@ -144,33 +138,6 @@
     &:after,
     &:before {
       border-color: $linkColor;
-    }
-  }
-}
-
-.c-button.-ie {
-  .browser-is-ie & {
-    &:hover {
-      & > span {
-        &:after {
-          transform: translate(5px, -50%) rotate(45deg);
-        }
-        &:before {
-          transform: translate(0, -50%) rotate(45deg);
-        }
-      }
-    }
-    padding: {
-      top: 13px;
-      bottom: 13px;
-    }
-    & > span {
-      &:after {
-        transform: translate(0, -50%) rotate(45deg);
-      }
-      &:before {
-        transform: translate(-5px, -50%) rotate(45deg);
-      }
     }
   }
 }
