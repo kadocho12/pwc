@@ -17,7 +17,9 @@
   },
   "globals": {
     "jQuery": "readonly", //  writable
-    "$": "readonly"
+    "$": "readonly",
+    "TweenLite": "readonly",
+    "Power4": "readonly"
   },
   "rules": {
     "prettier/prettier": [

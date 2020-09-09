@@ -2,49 +2,57 @@
 // Break Point
 // ==========================================================================
 // 16px === 1em
-$screenSize_FULL: 'print, screen and (min-width:' (1750 / 16) + em ')'; // PC 想定 フルサイズ
-$screenSize_XL: 'print, screen and (min-width:' (1400 / 16) + em ')'; // PC 想定 1400px 以上
-$screenSize_L: 'print, screen and (min-width:' (1200 / 16) + em ')'; // PC 想定 1200px 以上
-$screenSize_M: 'print, screen and (min-width:' (1024 / 16) + em ')'; // PC 想定 1024px 以上
-$screenSize_underM: 'print, screen and (max-width:' (1023 / 16) + em ')'; // PC 想定 1023px 以下
-$screenSize_S: 'print, screen and (min-width:' (768 / 16) + em ')'; // PC 想定 768px 以上
-$screenSize_XS: 'only screen and (max-width:' (767 / 16) + em ')'; // SP 想定 767px 以下
-$screenSize_XXS: 'only screen and (min-width:' (375 / 16) + em ')'; // SP  想定 375px 以上
-$screenSize_XXXS: 'only screen and (max-width:' (374 / 16) + em ')'; // SP 想定 374px 以下
+$screenSize_FULL: "print, screen and (min-width:" (1750 / 16) + em ")"; // PC 想定 フルサイズ
+$screenSize_XL: "print, screen and (min-width:" (1400 / 16) + em ")"; // PC 想定 1400px 以上
+$screenSize_L: "print, screen and (min-width:" (1200 / 16) + em ")"; // PC 想定 1200px 以上
+$screenSize_M: "print, screen and (min-width:" (1024 / 16) + em ")"; // PC 想定 1024px 以上
+$screenSize_underM: "print, screen and (max-width:" (1023 / 16) + em ")"; // PC 想定 1023px 以下
+$screenSize_S: "print, screen and (min-width:" (768 / 16) + em ")"; // PC 想定 768px 以上
+$screenSize_XS: "only screen and (max-width:" (767 / 16) + em ")"; // SP 想定 767px 以下
+$screenSize_XXS: "only screen and (min-width:" (375 / 16) + em ")"; // SP  想定 375px 以上
+$screenSize_XXXS: "only screen and (max-width:" (374 / 16) + em ")"; // SP 想定 374px 以下
 
 $bpList: (
-  'underM': $screenSize_underM,
-  'XXXS': $screenSize_XXXS,
-  'XXS': $screenSize_XXS,
-  'XS': $screenSize_XS,
-  'S': $screenSize_S,
-  'M': $screenSize_M,
-  'L': $screenSize_L,
-  'XL': $screenSize_XL,
-  'FULL': $screenSize_FULL
+  "underM": $screenSize_underM,
+  "XXXS": $screenSize_XXXS,
+  "XXS": $screenSize_XXS,
+  "XS": $screenSize_XS,
+  "S": $screenSize_S,
+  "M": $screenSize_M,
+  "L": $screenSize_L,
+  "XL": $screenSize_XL,
+  "FULL": $screenSize_FULL
 );
 
 // ==========================================================================
 // Font
 // ==========================================================================
-$baseFont: 'YakuHanJP', 'Noto Sans CJK JP Subset', 'Yu Gothic Medium',
-  '游ゴシック Medium', 'Yu Gothic', '游ゴシック', YuGothic,
-  'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'arial';
-$baseSpFont: 'YakuHanJP', 'Noto Sans CJK JP Subset', 'ヒラギノ角ゴ Pro W3',
-  'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'arial';
-$headSpFont: 'YakuHanJP', 'Noto Sans CJK JP Subset', 'ヒラギノ角ゴ Pro W3',
-  'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'arial';
-$headFont: 'YakuHanJP', 'Noto Sans CJK JP Subset', 'Yu Gothic', '游ゴシック',
-  YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
-  'Meiryo', 'arial';
-$engFont: 'Roboto', sans-serif;
+$baseFont: "YakuHanJP", "Noto Sans CJK JP Subset", "Yu Gothic Medium",
+  "游ゴシック Medium", "Yu Gothic", "游ゴシック", YuGothic,
+  "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo",
+  "arial";
+$baseSpFont: "YakuHanJP", "Noto Sans CJK JP Subset", "ヒラギノ角ゴ Pro W3",
+  "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "arial";
+$headSpFont: "YakuHanJP", "Noto Sans CJK JP Subset", "ヒラギノ角ゴ Pro W3",
+  "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "arial";
+$headFont: "YakuHanJP", "Noto Sans CJK JP Subset", "Yu Gothic", "游ゴシック",
+  YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+  "Meiryo", "arial";
+$engFont: "Roboto", sans-serif;
 
 /* YakuHan（文字詰め）なし
 ----------------------------------------------------------------- */
-$baseOriginFont: 'Yu Gothic Medium', '游ゴシック Medium', 'Yu Gothic', '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'arial';
-$baseOriginSpFont: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'arial';
-$headOriginSpFont: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'arial';
-$headOriginFont: 'Yu Gothic', '游ゴシック', YuGothic, 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, 'arial';
+$baseOriginFont: "Noto Sans CJK JP Subset", "Yu Gothic Medium",
+"游ゴシック Medium", "Yu Gothic", "游ゴシック", YuGothic,
+"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo",
+"arial";
+$baseOriginSpFont: "Noto Sans CJK JP Subset", "ヒラギノ角ゴ Pro W3",
+"Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "arial";
+$headOriginSpFont: "YakuHanJP", "Noto Sans CJK JP Subset", "ヒラギノ角ゴ Pro W3",
+"Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "arial";
+$headOriginFont: "YakuHanJP", "Noto Sans CJK JP Subset", "Yu Gothic", "游ゴシック",
+YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ",
+"Meiryo", "arial";
 
 $book: 400;
 $medium: 500;
@@ -58,7 +66,7 @@ $black: #000;
 $white: #fff;
 
 $baseColor: #fff;
-$mainColor: #185BB2;
+$mainColor: #185bb2;
 
 $textColor: #333;
 $linkColor: $mainColor;
@@ -80,16 +88,16 @@ $footerColor: #222;
 // ==========================================================================
 // Gradient
 // ==========================================================================
-$gradation: linear-gradient(to right, #187DDD 0%,#0BA2CE 100%);
-$gradationHover: linear-gradient(to right, #0BA2CE 0%,#00C3C1 100%);
+$gradation: linear-gradient(to right, #187ddd 0%, #0ba2ce 100%);
+$gradationHover: linear-gradient(to right, #0ba2ce 0%, #00c3c1 100%);
 
 // ==========================================================================
 // transition
 // ==========================================================================
-$inTransition: 0.4s ease;
-$outTransition: 0.6s ease;
-$baseTransition: 0.2s ease;
-$largeTransition: 0.4s ease;
+$inTransition: .4s ease;
+$outTransition: .6s ease;
+$baseTransition: .2s ease;
+$largeTransition: .4s ease;
 
 // ==========================================================================
 // z-index
@@ -105,7 +113,7 @@ $zIndexLv0: 0;
 // ==========================================================================
 // z-index
 // ==========================================================================
-$headerShadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
+$headerShadow: 0 1px 5px 0 rgba(0, 0, 0, .05);
 
 // ==========================================================================
 // Easing
@@ -114,31 +122,30 @@ $headerShadow: 0 1px 5px 0 rgba(0, 0, 0, 0.05);
  * Easing function
  * Original：http://easings.net/
  */
-$easeInSine:     cubic-bezier(0.47,  0,     0.745, 0.715);
-$easeOutSine:    cubic-bezier(0.39,  0.575, 0.565, 1    );
-$easeInOutSine:  cubic-bezier(0.445, 0.05,  0.55,  0.95 );
-$easeInQuad:     cubic-bezier(0.55,  0.085, 0.68,  0.53 );
-$easeOutQuad:    cubic-bezier(0.25,  0.46,  0.45,  0.94 );
-$easeInOutQuad:  cubic-bezier(0.455, 0.03,  0.515, 0.955);
+$easeInSine: cubic-bezier(.47, 0, .745, .715);
+$easeOutSine: cubic-bezier(.39, .575, .565, 1);
+$easeInOutSine: cubic-bezier(.445, .05, .55, .95);
+$easeInQuad: cubic-bezier(.55, .085, .68, .53);
+$easeOutQuad: cubic-bezier(.25, .46, .45, .94);
+$easeInOutQuad: cubic-bezier(.455, .03, .515, .955);
 
-$easeInCubic:    cubic-bezier(0.55,  0.055, 0.675, 0.19 );
-$easeOutCubic:   cubic-bezier(0.215, 0.61,  0.355, 1    );
-$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1    );
-$easeInQuart:    cubic-bezier(0.895, 0.03,  0.685, 0.22 );
-$easeOutQuart:   cubic-bezier(0.165, 0.84,  0.44,  1    );
-$easeInOutQuart: cubic-bezier(0.77,  0,     0.175, 1    );
+$easeInCubic: cubic-bezier(.55, .055, .675, .19);
+$easeOutCubic: cubic-bezier(.215, .61, .355, 1);
+$easeInOutCubic: cubic-bezier(.645, .045, .355, 1);
+$easeInQuart: cubic-bezier(.895, .03, .685, .22);
+$easeOutQuart: cubic-bezier(.165, .84, .44, 1);
+$easeInOutQuart: cubic-bezier(.77, 0, .175, 1);
 
-$easeInQuint:    cubic-bezier(0.755, 0.05,  0.855, 0.06 );
-$easeOutQuint:   cubic-bezier(0.23,  1,     0.32,  1    );
-$easeInOutQuint: cubic-bezier(0.86,  0,     0.07,  1    );
-$easeInExpo:     cubic-bezier(0.95,  0.05,  0.795, 0.035);
-$easeOutExpo:    cubic-bezier(0.19,  1,     0.22,  1    );
-$easeInOutExpo:  cubic-bezier(1,     0,     0,     1    );
+$easeInQuint: cubic-bezier(.755, .05, .855, .06);
+$easeOutQuint: cubic-bezier(.23, 1, .32, 1);
+$easeInOutQuint: cubic-bezier(.86, 0, .07, 1);
+$easeInExpo: cubic-bezier(.95, .05, .795, .035);
+$easeOutExpo: cubic-bezier(.19, 1, .22, 1);
+$easeInOutExpo: cubic-bezier(1, 0, 0, 1);
 
-$easeInCirc:     cubic-bezier(0.6,   0.04,  0.98,  0.335);
-$easeOutCirc:    cubic-bezier(0.075, 0.82,  0.165, 1    );
-$easeInOutCirc:  cubic-bezier(0.785, 0.135, 0.15,  0.86 );
-$easeInBack:     cubic-bezier(0.6,  -0.28,  0.735, 0.045);
-$easeOutBack:    cubic-bezier(0.175, 0.885, 0.32,  1.275);
-$easeInOutBack:  cubic-bezier(0.68, -0.55,  0.265, 1.55 );
-
+$easeInCirc: cubic-bezier(.6, .04, .98, .335);
+$easeOutCirc: cubic-bezier(.075, .82, .165, 1);
+$easeInOutCirc: cubic-bezier(.785, .135, .15, .86);
+$easeInBack: cubic-bezier(.6, -.28, .735, .045);
+$easeOutBack: cubic-bezier(.175, .885, .32, 1.275);
+$easeInOutBack: cubic-bezier(.68, -.55, .265, 1.55);

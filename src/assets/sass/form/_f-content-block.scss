@@ -1,6 +1,3 @@
-.f-content-block {
-}
-
 .f-content-block__head {
   @media #{$screenSize_XS} {
     margin: {
@@ -22,10 +19,6 @@
 }
 
 .f-content-block__item--column_2 {
-  @media #{$screenSize_S} {
-    display: flex;
-    justify-content: space-between;
-  }
 
   & > * {
     @media #{$screenSize_XS} {
@@ -35,5 +28,9 @@
     @media #{$screenSize_S} {
       width: calc(50% - 20px);
     }
+  }
+  @media #{$screenSize_S} {
+    display: flex;
+    justify-content: space-between;
   }
 }

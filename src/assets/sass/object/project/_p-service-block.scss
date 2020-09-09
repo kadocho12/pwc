@@ -8,16 +8,16 @@
   }
   @media #{$screenSize_S} {
     display: flex;
-    justify-content: space-between;
     flex-wrap: nowrap;
+    justify-content: space-between;
   }
 }
 
 .p-service-block__text {
   @media #{$screenSize_XS} {
-    line-height: 1.85;
     @include fontSize(15);
     margin-top: 18px;
+    line-height: 1.85;
   }
   @media #{$screenSize_S} {
     order: 1;
@@ -28,7 +28,7 @@
 .p-service-block__img {
   @media #{$screenSize_S} {
     order: 2;
-    width: 40%;
     margin-left: 60px;
+    width: 40%;
   }
 }

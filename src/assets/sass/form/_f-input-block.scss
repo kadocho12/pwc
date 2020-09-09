@@ -1,6 +1,14 @@
 .f-input-block {
   border: none;
 
+  &.-input {
+    .f-input-block__head {
+      @media #{$screenSize_M} {
+        padding-top: .4em;
+      }
+    }
+  }
+
   @media #{$screenSize_S} {
     min-height: 25px;
   }
@@ -8,39 +16,9 @@
   @media #{$screenSize_M} {
     display: flex;
   }
-
-  &.-input {
-    .f-input-block__head {
-      @media #{$screenSize_M} {
-        padding-top: 0.4em;
-      }
-    }
-  }
 }
 
 .f-input-block__head {
-  @media #{$screenSize_XS} {
-    margin: {
-      bottom: 15px;
-    }
-  }
-
-  @media #{$screenSize_S} {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-
-    margin: {
-      bottom: 15px;
-    }
-  }
-
-  @media #{$screenSize_M} {
-    width: 310px;
-    padding-right: 30px;
-    box-sizing: border-box;
-    margin-bottom: 0;
-  }
 
   .f-content-block--type_check & {
     margin: {
@@ -53,12 +31,38 @@
       }
     }
   }
+  @media #{$screenSize_XS} {
+    margin: {
+      bottom: 15px;
+    }
+  }
+
+  @media #{$screenSize_S} {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+
+    margin: {
+      bottom: 15px;
+    }
+  }
+
+  @media #{$screenSize_M} {
+    box-sizing: border-box;
+    margin-bottom: 0;
+    padding-right: 30px;
+    width: 310px;
+  }
 }
 
 .f-input-block__heading {
   font: {
     family: $headFont;
-    weight: bold;
+    weight: $medium;
+  }
+
+  .f-required {
+    margin-left: 5px;
   }
 
   @media #{$screenSize_XS} {
@@ -69,16 +73,12 @@
     @include fontSize(16);
     // margin-right: 20px;
   }
-
-  .f-required {
-    margin-left: 5px;
-  }
 }
 
 .f-input-block__sub-heading {
   font: {
     family: $headFont;
-    weight: bold;
+    weight: $medium;
   }
 
   @media #{$screenSize_XS} {
@@ -103,17 +103,6 @@
   display: -webkit-flex;
   width: 100%;
 
-  margin: {
-    left: 10px;
-  }
-
-  @media #{$screenSize_XS} {
-    margin: {
-      left: 0;
-      bottom: 10px;
-    }
-  }
-
   &:first-child {
     margin: {
       left: 0;
@@ -128,10 +117,21 @@
     }
   }
 
+  margin: {
+    left: 10px;
+  }
+
   & > .f-input-inner-text {
     line-height: 2.5;
 
     @media #{$screenSize_XS} {
+    }
+  }
+
+  @media #{$screenSize_XS} {
+    margin: {
+      bottom: 10px;
+      left: 0;
     }
   }
 }

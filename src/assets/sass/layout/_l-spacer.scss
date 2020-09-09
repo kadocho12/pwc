@@ -1,6 +1,6 @@
 /*
   Spacer
------------------------------------------------------*/
+----------------------------------------------------- */
 
 .l-spacer {
   /* 上下余白
@@ -16,7 +16,7 @@
       padding: 128px 0;
     }
   }
-  
+
   &.-medium {
     @media #{$screenSize_XS} {
       padding: 32px 0;
@@ -40,28 +40,28 @@
 
   // 見出し（セクション）の上余白
   &.-h2 {
+
+    &:first-child {
+      margin-top: 0;
+    }
     @media #{$screenSize_XS} {
       margin-top: 50px;
     }
     @media #{$screenSize_S} {
       margin-top: 80px;
     }
-    
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   &.-h3 {
+
+    &:first-child {
+      margin-top: 0;
+    }
     @media #{$screenSize_XS} {
       margin-top: 40px;
     }
     @media #{$screenSize_S} {
       margin-top: 64px;
-    }
-
-    &:first-child {
-      margin-top: 0;
     }
   }
 
@@ -74,7 +74,7 @@
   &.-pb0 {
     padding-bottom: 0 !important;
   }
-  
+
   // margin-top
   &.-mtMedium {
     @media #{$screenSize_XS} {
@@ -84,7 +84,7 @@
       margin-top: 32px;
     }
   }
-  
+
   /* 背景付き余白
   ----------------------------------------------------------------- */
   &.-gradient {
@@ -92,19 +92,19 @@
   }
 
   &.-pageTop {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
     position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     &::before {
-      content: '';
       position: absolute;
       top: 0;
       right: 0;
-      left: 0;
       bottom: 0;
-      background-color: rgba(0,0,0,0.2);
+      left: 0;
+      background-color: rgba(0, 0, 0, .2);
+      content: "";
     }
   }
 

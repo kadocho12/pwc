@@ -1,6 +1,6 @@
 .p-contact {
-  color: $white;
   flex-wrap: nowrap;
+  color: $white;
   @media #{$screenSize_XS} {
     display: block;
   }
@@ -8,13 +8,13 @@
 
 .p-contact__info {
   @media #{$screenSize_XS} {
-    width: 100%;
     margin-top: 8px;
+    width: 100%;
   }
   @media #{$screenSize_S} {
     display: flex;
-    margin-left: auto;
     flex-wrap: wrap;
+    margin-left: auto;
     margin-left: 40px;
   }
 }

@@ -6,31 +6,31 @@
   &.-start {
     justify-content: start;
   }
-  
+
   &.-center {
     justify-content: center;
   }
-  
+
   &.-end {
     justify-content: end;
   }
-  
+
   &.-justify {
     justify-content: space-between;
   }
-  
+
   &.-top {
     align-items: flex-start;
   }
-  
+
   &.-middle {
     align-items: center;
   }
-  
+
   &.-baseline {
     align-items: baseline;
   }
-  
+
   &.-bottom {
     align-items: flex-end;
   }
@@ -57,7 +57,7 @@
   display: flex;
   flex-direction: column;
   margin: 0;
-  
+
   &.-right {
     flex: 1 1 auto;
   }
@@ -69,7 +69,7 @@
   &.-row {
     flex-direction: row;
   }
-  
+
   // .c-grid__itemの横幅
   // i = 12 / 横並びにしたい要素数
   @for $i from 1 through 12 {
@@ -116,19 +116,6 @@
 .c-grid.-gutter {
   width: auto;
 
-  @media #{$screenSize_XS} {
-    margin: -8px;
-  }
-  @media #{$screenSize_S} {
-    margin: -8px;
-  }
-  @media #{$screenSize_M} {
-    margin: -12px;
-  }
-  @media #{$screenSize_L} {
-    margin: -16px;
-  }
-
   & .c-grid__item {
     // background-clip: padding-box;
     border: {
@@ -149,22 +136,23 @@
       border-width: 16px;
     }
   }
-}
 
-.c-grid.-gutter.-large {
   @media #{$screenSize_XS} {
     margin: -8px;
   }
   @media #{$screenSize_S} {
-    margin: -12px;
+    margin: -8px;
   }
   @media #{$screenSize_M} {
-    margin: -16px;
+    margin: -12px;
   }
   @media #{$screenSize_L} {
-    margin: -24px;
+    margin: -16px;
   }
-  
+}
+
+.c-grid.-gutter.-large {
+
   & > .c-grid__item {
     @media #{$screenSize_XS} {
       border-width: 8px;
@@ -179,14 +167,24 @@
       border-width: 24px;
     }
   }
-
+  @media #{$screenSize_XS} {
+    margin: -8px;
+  }
+  @media #{$screenSize_S} {
+    margin: -12px;
+  }
+  @media #{$screenSize_M} {
+    margin: -16px;
+  }
+  @media #{$screenSize_L} {
+    margin: -24px;
+  }
 }
 
 .c-grid.-gutter.-small {
   margin: -4px;
-  
+
   & > .c-grid__item {
     border-width: 4px;
   }
 }
-

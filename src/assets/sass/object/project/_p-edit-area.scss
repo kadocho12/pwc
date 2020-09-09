@@ -1,23 +1,15 @@
 .p-edit-area {
   /* 段落 */
   & p {
-    line-height: 1.5;
     @include lineHeightCrop(1.5);
-    @media #{$screenSize_XS} {
-      @include fontSize(14);
-      margin-top: 21px;
-    }
-    @media #{$screenSize_S} {
-      @include fontSize(16);
-      margin-top: 24px;
-    }
+    line-height: 1.5;
 
     &:first-child {
       margin-top: 0;
     }
 
     & > a {
-      transition: color 0.6s ease;
+      transition: color .6s ease;
       &:hover {
         @media #{$screenSize_M} {
           color: $linkColor;
@@ -37,11 +29,19 @@
         margin-top: 16px;
       }
     }
+    @media #{$screenSize_XS} {
+      @include fontSize(14);
+      margin-top: 21px;
+    }
+    @media #{$screenSize_S} {
+      @include fontSize(16);
+      margin-top: 24px;
+    }
   }
 
   /* 強調文字 */
   & strong {
-    font-weight: bold;
+    font-weight: $medium;
   }
 
   /* 見出し
@@ -49,9 +49,13 @@
   & h2 {
     @extend .c-heading;
     @extend .c-heading.-lv_2;
+    @include lineHeightCrop(1.5);
 
     line-height: 1.5;
-    @include lineHeightCrop(1.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     @media #{$screenSize_XS} {
       margin-top: 50px;
@@ -61,18 +65,18 @@
       margin-top: 80px;
       margin-bottom: 48px;
     }
-
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   & h3 {
     @extend .c-heading;
     @extend .c-heading.-lv_3;
+    @include lineHeightCrop(1.5);
 
     line-height: 1.5;
-    @include lineHeightCrop(1.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     @media #{$screenSize_XS} {
       margin-top: 40px;
@@ -82,19 +86,50 @@
       margin-top: 64px;
       margin-bottom: 40px;
     }
-
-    &:first-child {
-      margin-top: 0;
-    }
   }
 
   /* 丸リスト
   ----------------------------------------------------------------- */
   & ul {
     @extend .c-list;
+    @include lineHeightCrop(1.5);
 
     line-height: 1.5;
-    @include lineHeightCrop(1.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & > li {
+
+      &:before {
+        position: absolute;
+        // @include lineHeightFixTop(1.5);
+
+        top: .65em;
+        left: 1px;
+        border-radius: 50%;
+        background-color: $mainColor;
+        width: 5px;
+        height: 5px;
+        content: "";
+        .browser-is-ie & {
+          top: .5em;
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+      @media #{$screenSize_XS} {
+        margin-top: 4px;
+        padding-left: 16px;
+      }
+      @media #{$screenSize_S} {
+        margin-top: 8px;
+        padding-left: 22px;
+      }
+    }
 
     @media #{$screenSize_XS} {
       @include fontSize(14);
@@ -103,41 +138,6 @@
     @media #{$screenSize_S} {
       @include fontSize(16);
       margin-top: 24px;
-    }
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    & > li {
-      @media #{$screenSize_XS} {
-        padding-left: 16px;
-        margin-top: 4px;
-      }
-      @media #{$screenSize_S} {
-        padding-left: 22px;
-        margin-top: 8px;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        // @include lineHeightFixTop(1.5);
-
-        top: 0.65em;
-        left: 1px;
-        width: 5px;
-        height: 5px;
-        border-radius: 50%;
-        background-color: $mainColor;
-        .browser-is-ie & {
-          top: 0.5em;
-        }
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
     }
   }
 
@@ -145,10 +145,42 @@
   ----------------------------------------------------------------- */
   & ol {
     @extend .c-list;
+    @include lineHeightCrop(1.5);
+    line-height: 1.5;
 
     counter-reset: number;
-    line-height: 1.5;
-    @include lineHeightCrop(1.5);
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    & > li {
+      position: relative;
+
+      &:before {
+        @include engFont;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $mainColor;
+        font-weight: $medium;
+        content: counter(number) ".";
+        counter-increment: number;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+      @media #{$screenSize_XS} {
+        margin-top: 4px;
+        padding-left: 16px;
+      }
+      @media #{$screenSize_S} {
+        margin-top: 8px;
+        padding-left: 22px;
+      }
+    }
 
     @media #{$screenSize_XS} {
       @include fontSize(14);
@@ -157,38 +189,6 @@
     @media #{$screenSize_S} {
       @include fontSize(16);
       margin-top: 24px;
-    }
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    & > li {
-      position: relative;
-      @media #{$screenSize_XS} {
-        padding-left: 16px;
-        margin-top: 4px;
-      }
-      @media #{$screenSize_S} {
-        padding-left: 22px;
-        margin-top: 8px;
-      }
-
-      &:before {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        counter-increment: number;
-        content: counter(number) '.';
-        color: $mainColor;
-        @include engFont;
-        font-weight: $semibold;
-      }
-
-      &:first-child {
-        margin-top: 0;
-      }
     }
   }
 
@@ -201,22 +201,22 @@
   /* リンク
   ----------------------------------------------------------------- */
   & > a {
-    line-height: 1.5;
     @include lineHeightCrop(1.5);
+    display: inline;
 
     position: relative;
-    display: inline;
+    transition: color .6s ease;
     text-decoration: none;
-    transition: color 0.6s ease;
+    line-height: 1.5;
 
     &::before {
-      content: '';
       display: inline-block;
       position: absolute;
       right: 12px;
-      left: 0;
       bottom: 0;
+      left: 0;
       border-bottom: 1px solid $mainColor;
+      content: "";
     }
 
     &:hover {

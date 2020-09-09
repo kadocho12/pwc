@@ -1,33 +1,16 @@
 .f-input-text {
-  font: {
-    family: $baseFont;
-  }
-
-  background: $formBgDefaultColor;
-
-  border: {
-    width: $formBorderWidth;
-    style: solid;
-    color: $formBorderDefaultColor;
-    radius: $inputElementRadius;
-  }
-
-  padding: {
-    top: 9px;
-    right: 14px;
-    bottom: 9px;
-    left: 14px;
-  }
+  @include fontSize(16);
+  -webkit-appearance: none;
 
   box-sizing: border-box;
-  -webkit-transition: background-color 0.3s 0s
-    cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: background-color 0.3s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: background-color .3s 0s
+    cubic-bezier(.215, .61, .355, 1);
+  transition: background-color .3s 0s cubic-bezier(.215, .61, .355, 1);
+
+  background: $formBgDefaultColor;
   width: 100%;
-  -webkit-appearance: none;
   // -webkit-border-radius: 0;
   -webkit-tap-highlight-color: transparent;
-  @include fontSize(16);
 
   &:hover {
     @media #{$screenSize_XS} {
@@ -40,31 +23,48 @@
       }
     }
   }
+  font: {
+    family: $baseFont;
+  }
+
+  border: {
+    width: $formBorderWidth;
+    color: $formBorderDefaultColor;
+    style: solid;
+    radius: $inputElementRadius;
+  }
+
+  padding: {
+    top: 9px;
+    right: 14px;
+    bottom: 9px;
+    left: 14px;
+  }
 
   // type="number" の▲▼ボタンを非表示
-  &[type='number']::-webkit-outer-spin-button {
+  &[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  &[type='number']::-webkit-inner-spin-button {
+  &[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
 
-  &[type='number'] {
+  &[type="number"] {
     -moz-appearance: textfield;
   }
 }
 
 .f-input-text--type_calendar {
-  @media #{$screenSize_S} {
-    width: 339px;
-  }
 
   background: {
-    image: url('/inquiry/img/icon_calendar.svg');
+    image: url("/inquiry/img/icon_calendar.svg");
     repeat: no-repeat;
     position: right 14px top 11px;
+  }
+  @media #{$screenSize_S} {
+    width: 339px;
   }
 }

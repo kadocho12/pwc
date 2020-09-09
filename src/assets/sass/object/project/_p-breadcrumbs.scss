@@ -1,10 +1,10 @@
 .p-breadcrumbs {
   display: flex;
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   z-index: $zIndexLv1;
+  width: 100%;
   @media #{$screenSize_XS} {
     display: none;
   }
@@ -12,19 +12,19 @@
 
 .p-breadcrumbs__inner {
   display: flex;
+  padding-top: 15px;
   width: 90%;
   overflow: hidden;
   margin: {
     right: auto;
     left: auto;
   }
-  padding-top: 15px;
 }
 
 .p-breadcrumbs__item {
+  @include fontSize(13);
   position: relative;
   padding-left: 12px;
-  @include fontSize(13);
   white-space: nowrap;
   color: $textColor;
 
@@ -44,12 +44,12 @@
   &:before {
     display: inline;
     margin-right: 12px;
-    content: '/';
+    content: "/";
   }
 
   & > a {
-    color: $textColor;
     text-decoration: underline;
+    color: $textColor;
   }
 
   & > span {
@@ -61,7 +61,7 @@
 }
 
 /* モディファイア
-----------------------------------------------------*/
+---------------------------------------------------- */
 
 .p-breadcrumbs.-onVisual {
   .p-breadcrumbs__item {

@@ -1,9 +1,9 @@
 .p-page-heading {
   @include engFont;
-  font-weight: $medium;
-  color: $white;
   position: relative;
   text-align: center;
+  color: $white;
+  font-weight: $medium;
   @media #{$screenSize_XS} {
     @include fontSize(32);
   }
@@ -14,8 +14,8 @@
 
 .p-page-heading__sub {
   @include headFont;
-  font-weight: $semibold;
   display: block;
+  font-weight: $medium;
   @media #{$screenSize_XS} {
     @include fontSize(16);
   }

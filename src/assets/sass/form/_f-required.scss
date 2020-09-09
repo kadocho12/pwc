@@ -1,6 +1,6 @@
 .f-required {
-  font-family: $headFont;
-  font-weight: bold;
   @include fontSize(14);
   color: $requireColor;
+  font-family: $headFont;
+  font-weight: $medium;
 }

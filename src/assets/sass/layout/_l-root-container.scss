@@ -1,12 +1,12 @@
 /* Body直下のwrapper
 ----------------------------------------------------------------- */
 .l-root-container {
-  position: relative;
-  overflow: hidden;
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+  overflow: hidden;
 
   .browser-is-ie & {
     display: block;

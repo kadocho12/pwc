@@ -3,38 +3,32 @@
 /* ==========================================================================
 Foundation
 ========================================================================== */
-@import 'foundation/font';
-@import 'foundation/variable';
-@import 'foundation/function';
-@import 'foundation/icon';
-@import 'foundation/mixin';
-@import 'foundation/reset';
-@import 'foundation/base';
-@import 'foundation/keyframes';
+@import "foundation/variable";
+@import "foundation/function";
+@import "foundation/icon";
+@import "foundation/mixin";
+@import "foundation/reset";
+@import "foundation/base";
+@import "foundation/keyframes";
 
 /* ==========================================================================
 Layout
 ========================================================================== */
-@import 'layout/*';
+@import "layout/*";
 
 /* ==========================================================================
 Object
 ========================================================================== */
 // Component ////////////////////////////////
-@import 'object/component/*';
+@import "object/component/*";
 
 // Project ////////////////////////////////
-@import 'object/project/*';
+@import "object/project/*";
 
 // Utility ////////////////////////////////
-@import 'object/utility/*';
+@import "object/utility/*";
 
 /* ==========================================================================
 Form
 ========================================================================== */
-@import 'form/*';
-
-/* ==========================================================================
-Print
-========================================================================== */
-// @import 'print/print';
+@import "form/*";

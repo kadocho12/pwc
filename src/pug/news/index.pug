@@ -20,17 +20,18 @@ block content
         .p-news
           .p-news__list
             each newsItems in pages.news.child
-              article.p-news__item
-                a.p-news__link(href=newsItems.path)
-                  .p-news__info
-                    time.p-news__date(datetime=newsItems.datetime) #{newsItems.date}
-                      case newsItems.category
-                        when "news"
-                          span.p-news__category.-news お知らせ
-                        when "blog"
-                          span.p-news__category.-blog ブログ
-                        default
-                          span.p-news__category
-                  p.p-news__text #{newsItems.title}
+              if newsItems.home === true
+                article.p-news__item
+                  a.p-news__link(href=newsItems.path)
+                    .p-news__info
+                      time.p-news__date(datetime=newsItems.datetime) #{newsItems.date}
+                        case newsItems.category
+                          when "news"
+                            span.p-news__category.-news お知らせ
+                          when "blog"
+                            span.p-news__category.-blog ブログ
+                          default
+                            span.p-news__category
+                    p.p-news__text #{newsItems.title}
   //- お問い合わせ
   include /_components/_contact-block

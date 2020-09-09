@@ -2,9 +2,9 @@
 ----------------------------------------------------------------- */
 .c-heading {
   @include headFont;
-  font-weight: bold;
-  line-height: 1.5;
   @include lineHeightCrop(1.5);
+  line-height: 1.5;
+  font-weight: $medium;
 
   /* h1レベルの見出し
   ----------------------------------------------------------------- */

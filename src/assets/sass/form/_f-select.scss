@@ -4,14 +4,53 @@
   background: $formBgDefaultColor;
   width: 100%;
 
+  &:before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: $zIndexLv2;
+    border-radius: 0 $inputElementRadius $inputElementRadius 0;
+    background-image: $gradation;
+    width: 40px;
+    height: calc(100%);
+    content: "";
+    pointer-events: none;
+  }
+
+  &:after {
+    @include icon-arrowBottom(#fff, 2);
+    position: absolute;
+    top: calc(50% - 2px);
+    right: 17px;
+    transform: rotate(90deg);
+    z-index: $zIndexLv3;
+    width: 8px;
+    height: 8px;
+    content: "";
+    pointer-events: none;
+    background: {
+      repeat: no-repeat;
+      size: contain;
+    }
+  }
+
   & > select {
-    position: relative;
-    z-index: $zIndexLv1;
-    cursor: pointer;
+
+    @include fontSize(16);
     -webkit-appearance: none;
     -moz-appearance: none;
+    position: relative;
+    z-index: $zIndexLv1;
+
+    background: transparent;
+    cursor: pointer;
+    cursor: pointer;
     width: 100%;
     line-height: 1.5;
+
+    &::-ms-expand {
+      display: none;
+    }
 
     padding: {
       top: 9px;
@@ -20,13 +59,10 @@
       left: 14px;
     }
 
-    background: transparent;
-    cursor: pointer;
-
     border: {
       width: $formBorderWidth;
-      style: solid;
       color: $formBorderDefaultColor;
+      style: solid;
       radius: $inputElementRadius;
     }
 
@@ -34,48 +70,12 @@
       family: $baseFont;
     }
 
-    @include fontSize(16);
-
     @media #{$screenSize_XS} {
       height: 44px;
     }
 
     @media #{$screenSize_S} {
     }
-
-    &::-ms-expand {
-      display: none;
-    }
-  }
-
-  &:before {
-    position: absolute;
-    content: '';
-    top: 0;
-    right: 0;
-    width: 40px;
-    height: calc(100%);
-    border-radius: 0 $inputElementRadius $inputElementRadius 0;
-    background-image: $gradation;
-    z-index: $zIndexLv2;
-    pointer-events: none;
-  }
-
-  &:after {
-    position: absolute;
-    content: '';
-    top: calc(50% - 2px);
-    right: 17px;
-    width: 8px;
-    height: 8px;
-    background: {
-      repeat: no-repeat;
-      size: contain;
-    }
-    @include icon-arrowBottom(#fff, 2);
-    transform: rotate(90deg);
-    z-index: $zIndexLv3;
-    pointer-events: none;
   }
 }
 

@@ -10,7 +10,7 @@
 .p-detail-head__heading {
   @extend .c-heading;
   @extend .c-heading.-lv_1;
-  
+
   @media #{$screenSize_XS} {
     @include fontSize(28);
   }
@@ -30,22 +30,16 @@
 }
 
 .p-detail-head__item {
-  @media #{$screenSize_XS} {
-    @include fontSize(14);
-  }
-  @media #{$screenSize_S} {
-    @include fontSize(16);
-  }
 
   &::before {
-    content: '｜';
+    content: "｜";
     @media #{$screenSize_XS} {
+      margin-right: 2px;
       margin-left: 2px;
-      margin-right: 2px;      
     }
     @media #{$screenSize_S} {
-      margin-left: 4px;
       margin-right: 4px;
+      margin-left: 4px;
     }
   }
 
@@ -53,5 +47,11 @@
     &::before {
       display: none;
     }
+  }
+  @media #{$screenSize_XS} {
+    @include fontSize(14);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(16);
   }
 }

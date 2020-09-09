@@ -2,18 +2,18 @@
 ----------------------------------------------------------------- */
 .c-list {
   line-height: 1.75;
-  
+
+  & li {
+    position: relative;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
   @media #{$screenSize_XS} {
     @include fontSize(16);
   }
   @media #{$screenSize_S} {
     @include fontSize(18);
-  }
-
-  & li {
-    position: relative;
-    line-height: 1.5;
-    margin-top: 6px;
   }
 }
 
@@ -23,19 +23,19 @@
     border-bottom: 1px solid $borderColor;
 
     & > a {
+      @include fontSize(14);
       display: block;
       position: relative;
+      font-weight: $medium;
       padding: {
         top: 16px;
         right: 24px;
         bottom: 16px;
       }
-      @include fontSize(14);
-      font-weight: bold;
 
       @media #{$screenSize_M} {
-        padding-right: 32px;
         @include fontSize(16);
+        padding-right: 32px;
       }
     }
   }
@@ -49,21 +49,21 @@
     position: relative;
     padding-left: 14px;
 
-    + li {
-      margin-top: 3px;
-    }
-
     &:before {
-      content: '';
+      box-sizing: border-box;
       display: block;
       position: absolute;
+      top: .75em;
       left: 1px;
+      border-radius: 50%;
+      background-color: $mainColor;
       width: 6px;
       height: 6px;
-      box-sizing: border-box;
-      background-color: $mainColor;
-      border-radius: 50%;
-      top: 0.75em;
+      content: "";
+    }
+
+    + li {
+      margin-top: 3px;
     }
   }
 }
@@ -72,8 +72,8 @@
  * 装飾付き（数字）
  */
 .c-list--decimal {
+  padding-left: 1em;
   list-style-type: decimal;
   list-style-position: inside;
   text-indent: -1em;
-  padding-left: 1em;
 }

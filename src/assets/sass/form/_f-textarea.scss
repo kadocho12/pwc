@@ -1,42 +1,14 @@
 .f-textarea {
-  font-family: $headFont;
-  background: $formBgDefaultColor;
-
-  border: {
-    width: $formBorderWidth;
-    style: solid;
-    color: $formBorderDefaultColor;
-    radius: $inputElementRadius;
-  }
-
-  padding: {
-    top: 9px;
-    right: 14px;
-    bottom: 9px;
-    left: 14px;
-  }
+  @include fontSize(16);
+  -webkit-appearance: none;
 
   box-sizing: border-box;
-  -webkit-transition: all 0.3s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 0.3s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: all .3s 0s cubic-bezier(.215, .61, .355, 1);
+  transition: all .3s 0s cubic-bezier(.215, .61, .355, 1);
+  background: $formBgDefaultColor;
   width: 100%;
-  -webkit-appearance: none;
+  font-family: $headFont;
   -webkit-tap-highlight-color: transparent;
-  @include fontSize(16);
-
-  @media #{$screenSize_XS} {
-    height: 180px;
-  }
-
-  @media #{$screenSize_S} {
-    height: 200px;
-    width: 100%;
-    // max-width: 680px;
-  }
-
-  .browser-is-ie & {
-    overflow: auto;
-  }
 
   &:hover {
     @media #{$screenSize_XS} {
@@ -48,5 +20,33 @@
         color: $white;
       }
     }
+  }
+
+  border: {
+    width: $formBorderWidth;
+    color: $formBorderDefaultColor;
+    style: solid;
+    radius: $inputElementRadius;
+  }
+
+  padding: {
+    top: 9px;
+    right: 14px;
+    bottom: 9px;
+    left: 14px;
+  }
+
+  .browser-is-ie & {
+    overflow: auto;
+  }
+
+  @media #{$screenSize_XS} {
+    height: 180px;
+  }
+
+  @media #{$screenSize_S} {
+    width: 100%;
+    height: 200px;
+    // max-width: 680px;
   }
 }

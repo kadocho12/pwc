@@ -1,7 +1,7 @@
 .p-tel {
   @include engFont;
-  font-weight: $medium;
   @include fontSize(32);
   display: inline-block;
   color: $white;
+  font-weight: $medium;
 }

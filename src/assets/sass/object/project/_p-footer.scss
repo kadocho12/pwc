@@ -1,13 +1,11 @@
 .p-footer {
+  color: $white;
   background: {
     color: $footerColor;
   }
-  color: $white;
 }
 
 .p-footer__body {
-  @media #{$screenSize_XS} {
-  }
   @media #{$screenSize_S} {
     display: flex;
     justify-content: space-between;
@@ -29,10 +27,10 @@
 .p-footer__logo-link {
   @include logo($white);
   display: block;
-  font-size: 0;
+  background-size: contain;
   width: 100%;
   height: 100%;
-  background-size: contain;
+  font-size: 0;
 }
 
 .p-footer__address {
@@ -61,33 +59,33 @@
 
 .p-footer__info-item {
   flex-direction: row;
-  @media #{$screenSize_M} {
-    width: auto;
-  }
 
   & > a {
-    color: $white;
     @include fontSize(12);
     display: inline-block;
+    color: $white;
+  }
+  @media #{$screenSize_M} {
+    width: auto;
   }
 }
 
 .p-footer__info-title {
-  @media #{$screenSize_XS} {
-    @include fontSize(14);
-  }
-  @media #{$screenSize_S} {
-    @include fontSize(16);
-  }
   &::before {
-    content: '-';
     display: inline-block;
+    content: "-";
     @media #{$screenSize_XS} {
       margin-right: 12px;
     }
     @media #{$screenSize_S} {
       margin-right: 8px;
     }
+  }
+  @media #{$screenSize_XS} {
+    @include fontSize(14);
+  }
+  @media #{$screenSize_S} {
+    @include fontSize(16);
   }
 }
 
@@ -101,11 +99,8 @@
 }
 
 .p-footer__bottom {
+  background: $gradation 0 0/200% 3px no-repeat;
   padding: 27px 0 24px;
-  background: 
-    $gradation
-    0 0/200% 3px 
-    no-repeat;
 }
 
 .p-footer__copy {

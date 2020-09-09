@@ -1,21 +1,91 @@
 .c-button {
-  position: relative;
-  overflow: hidden;
+  @include fontSize(14);
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
-  @include fontSize(14);
-  font-weight: bold;
   background-image: $gradation;
+  overflow: hidden;
+  font-weight: $medium;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translate(-100%, 0);
+    transition: transform .4s ease;
+    background-image: $gradationHover;
+    content: "";
+  }
+
+  &:hover {
+    @media #{$screenSize_M} {
+      &::before {
+        transform: translate(0, 0);
+      }
+
+      & > span {
+        &:after {
+          transform: translate(5px, -50%) rotate(45deg);
+          transition: all .4s ease;
+          opacity: 0;
+
+          .browser-is-ie & {
+            transform: translate(5px, -75%) rotate(45deg);
+          }
+        }
+        &:before {
+          transform: translate(0, -50%) rotate(45deg);
+          transition: all .4s ease;
+          opacity: 1;
+
+          .browser-is-ie & {
+            transform: translate(0, -75%) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
 
   .browser-is-safari & {
     z-index: $zIndexLv1;
   }
 
+  & > span {
+    position: relative;
+    padding-right: 15px;
+    color: $baseColor;
+
+    &:after {
+      @include arrow(8, 2, right, $white);
+      right: 0;
+      transition: all .6s ease;
+      .browser-is-ie & {
+        transform: translate(0, -75%) rotate(45deg);
+      }
+    }
+    &:before {
+      @include arrow(8, 2, right, $white);
+      right: 0;
+      transform: translate(-5px, -50%) rotate(45deg);
+      transition: all .6s ease;
+      opacity: 0;
+      .browser-is-ie & {
+        transform: translate(-5px, -75%) rotate(45deg);
+      }
+    }
+    @media #{$screenSize_M} {
+      transition: color $outTransition;
+    }
+  }
+
   @media #{$screenSize_XS} {
-    max-width: 320px;
-    width: 100%;
     margin: 0 auto;
+    width: 100%;
+    max-width: 320px;
     padding: {
       top: 12px;
       right: 16px;
@@ -40,76 +110,6 @@
       }
     }
   }
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: $gradationHover;
-    transform: translate(-100%, 0);
-    transition: transform .4s ease;
-  }
-
-  & > span {
-    padding-right: 15px;
-    position: relative;
-    color: $baseColor;
-    @media #{$screenSize_M} {
-      transition: color $outTransition;
-    }
-
-    &:after {
-      @include arrow(8, 2, right, $white);
-      right: 0;
-      transition: all 0.6s ease;
-      .browser-is-ie & {
-        transform: translate(0, -75%) rotate(45deg);
-      }
-    }
-    &:before {
-      @include arrow(8, 2, right, $white);
-      right: 0;
-      opacity: 0;
-      transform: translate(-5px, -50%) rotate(45deg);
-      transition: all 0.6s ease;
-      .browser-is-ie & {
-        transform: translate(-5px, -75%) rotate(45deg);
-      }
-    }
-  }
-
-  &:hover {
-    @media #{$screenSize_M} {
-      &::before {
-        transform: translate(0, 0);
-      }
-  
-      & > span {
-        &:after {
-          transform: translate(5px, -50%) rotate(45deg);
-          opacity: 0;
-          transition: all 0.4s ease;
-  
-          .browser-is-ie & {
-            transform: translate(5px, -75%) rotate(45deg);
-          }
-        }
-        &:before {
-          transform: translate(0, -50%) rotate(45deg);
-          opacity: 1;
-          transition: all 0.4s ease;
-  
-          .browser-is-ie & {
-            transform: translate(0, -75%) rotate(45deg);
-          }
-        }
-      }
-    }
-  }
 }
 
 /* 中央寄せ */
@@ -121,18 +121,11 @@
 }
 
 .c-button.-white {
-  background-image: none;
   background-color: $white;
+  background-image: none;
   &::before {
-    background-image: $gradationHover;
     opacity: .6;
-  }
-  & > span {
-    color: $linkColor;
-    &:after,
-    &:before {
-      border-color: $linkColor;
-    }
+    background-image: $gradationHover;
   }
 
   &:hover {
@@ -143,6 +136,40 @@
         &:before {
           border-color: $white;
         }
+      }
+    }
+  }
+  & > span {
+    color: $linkColor;
+    &:after,
+    &:before {
+      border-color: $linkColor;
+    }
+  }
+}
+
+.c-button.-ie {
+  .browser-is-ie & {
+    &:hover {
+      & > span {
+        &:after {
+          transform: translate(5px, -50%) rotate(45deg);
+        }
+        &:before {
+          transform: translate(0, -50%) rotate(45deg);
+        }
+      }
+    }
+    padding: {
+      top: 13px;
+      bottom: 13px;
+    }
+    & > span {
+      &:after {
+        transform: translate(0, -50%) rotate(45deg);
+      }
+      &:before {
+        transform: translate(-5px, -50%) rotate(45deg);
       }
     }
   }
