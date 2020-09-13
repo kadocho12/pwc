@@ -1,5 +1,3 @@
-import Screen from '../util/Screen';
-
 class SmoothScroll {
   constructor() {
     this.isScrolling = false;
