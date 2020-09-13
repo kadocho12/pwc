@@ -2,7 +2,6 @@ import Screen from '../util/Screen';
 
 class SmoothScroll {
   constructor() {
-    // this.BREAK_POINT = 768;
     this.isScrolling = false;
     this.target;
     this.$scrollTag =
@@ -20,17 +19,7 @@ class SmoothScroll {
 
     let scrollTop = this.$scrollTag.scrollTop();
     let targetTop = $(this.target).offset().top;
-    const cta = document.getElementById('js-fixed-cta');
 
-    if (!Screen.getBP(Screen.S) && cta) {
-      const _diff = cta.clientHeight;
-      if (_diff) targetTop -= _diff;
-    }
-    // if (UserAgent.browser.isIE11) {
-    //   targetTop -= $('#js-header').height() + 40;
-    // } else {
-    //   targetTop -= $('#js-header').height();
-    // }
     this.$scrollTag.scrollTop(scrollTop + 1);
 
     if (targetTop <= 0) targetTop = 0;
